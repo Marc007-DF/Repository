@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Escape Room - Estúdio Trancado</title>
+    <meta name="description" content="Um mini jogo estilo escape (scape) feito em HTML, CSS e JavaScript.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">Escape Room</div>
+      <div class="controls">
+        <button id="btn-reset" class="ui">Reiniciar</button>
+      </div>
+    </header>
+
+    <main class="game">
+      <aside class="inventory" aria-label="Inventário">
+        <h2>Inventário</h2>
+        <ul id="inventory-list" class="inventory-list" aria-live="polite"></ul>
+      </aside>
+
+      <section class="room" aria-label="Cena do quarto">
+        <!-- Parede e chão são decorativos via CSS -->
+
+        <!-- Porta -->
+        <button id="btn-porta" class="item porta" aria-label="Porta trancada" title="Porta"></button>
+
+        <!-- Quadro / Cofre -->
+        <button id="btn-quadro" class="item quadro" aria-label="Quadro na parede" title="Quadro"></button>
+
+        <!-- Relógio -->
+        <button id="btn-relogio" class="item relogio" aria-label="Relógio de parede" title="Relógio"></button>
+
+        <!-- Planta -->
+        <button id="btn-planta" class="item planta" aria-label="Planta no vaso" title="Planta"></button>
+
+        <!-- Mesa com gaveta -->
+        <div class="mesa">
+          <button id="btn-gaveta" class="item gaveta" aria-label="Gaveta da mesa" title="Gaveta"></button>
+        </div>
+
+        <!-- Dicas contextuais -->
+        <div class="hint" id="hint" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-content" role="document">
+        <div class="modal-header">
+          <h3 id="modal-title">Interagir</h3>
+          <button id="modal-close" class="ui" aria-label="Fechar">✕</button>
+        </div>
+        <div id="modal-body" class="modal-body"></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Feito com ❤️ em HTML, CSS e JavaScript. Dica: observe o relógio.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
